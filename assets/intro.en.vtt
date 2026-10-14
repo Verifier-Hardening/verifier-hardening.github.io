@@ -1,0 +1,82 @@
+WEBVTT
+
+00:00:00.500 --> 00:00:07.803
+This is Scalable Weak-to-Strong Verifier Hardening for Agent Environments: an automatic way to make the verifiers that grade AI agents harder to hack.
+
+00:00:08.803 --> 00:00:12.982
+Agent environments use programmatic verifiers to turn an agent's work into a reward.
+
+00:00:13.882 --> 00:00:17.005
+Take one task: set up a virtual display with three resolutions.
+
+00:00:18.005 --> 00:00:21.888
+To grade it, the verifier simply asks the display tool which modes it reports.
+
+00:00:22.888 --> 00:00:27.149
+So the agent skips the work, and swaps in a script that just prints the three expected answers.
+
+00:00:28.049 --> 00:00:31.305
+The verifier sees exactly what it wants, and awards full reward.
+
+00:00:31.655 --> 00:00:35.028
+But no display was ever configured. This is a reward hack.
+
+00:00:36.028 --> 00:00:43.940
+And this is no corner case. Across five benchmarks, frontier models hacked 409 of 1,860 tasks, without seeing the verifier's code.
+
+00:00:45.140 --> 00:00:50.836
+Patching verifiers one at a time, by hand, can't keep up, especially as stronger agents keep finding new holes.
+
+00:00:51.786 --> 00:00:56.827
+So our question is: can a weaker model, given more compute, harden verifiers against stronger agents?
+
+00:00:57.727 --> 00:01:03.139
+First, we move grading out of the agent's reach, into a fresh sandbox that only receives the declared outputs.
+
+00:01:04.087 --> 00:01:06.792
+Even so, a verifier can be fooled by what it receives.
+
+00:01:07.142 --> 00:01:12.565
+So a hacker that can read the verifier's code hunts for exploits, like labeling images by their filenames.
+
+00:01:13.199 --> 00:01:17.600
+When it earns full reward, a judge checks that it's a real hack, not an honest solve.
+
+00:01:18.600 --> 00:01:24.262
+A fixer studies the exploit and patches the hole: check the image itself, and copy only the expected outputs.
+
+00:01:25.162 --> 00:01:28.510
+Yet a patch that blocks hacks can also block honest work.
+
+00:01:28.860 --> 00:01:32.545
+So every patch must pass a review, and a replay of known solutions.
+
+00:01:32.895 --> 00:01:36.822
+Then a new solver tries the task from scratch, and here, it fails.
+
+00:01:37.172 --> 00:01:39.602
+The patch had stopped copying a file the solver needed.
+
+00:01:40.452 --> 00:01:43.716
+The fixer gets that feedback, and its revision passes every gate.
+
+00:01:44.636 --> 00:01:48.772
+Each accepted patch becomes the next target, so every round hunts for what the last one missed.
+
+00:01:49.786 --> 00:01:53.023
+Finally, a stronger model that never saw the loop attacks the result.
+
+00:01:53.373 --> 00:01:59.104
+On Terminal-Bench, Claude Opus 5 now succeeds 12.1 percent of the time, down from 69.9.
+
+00:02:00.304 --> 00:02:05.768
+Meanwhile, honest solving barely moves: 93.1 percent before, and 91.2 after.
+
+00:02:06.868 --> 00:02:08.676
+The same is true on KernelBench and SETA.
+
+00:02:11.048 --> 00:02:16.717
+Of the 295 tasks Opus 5 could hack at first, 201 now resist all three of its attempts.
+
+00:02:17.617 --> 00:02:22.889
+So with more compute, today's models can make verifiers much harder for tomorrow's agents to hack.

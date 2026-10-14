@@ -1,0 +1,625 @@
+{
+  "source": {
+    "title": "Scalable Weak-to-Strong Verifier Hardening for Agent Environments",
+    "file": "Terminal-Wrench-ICLR-2027/main.tex",
+    "revision": "d2b33a6",
+    "manuscript_sha256": "5bd4bf8ed7138063b244d598c7c6d4f10bed28b15613f399a9450813f532946d",
+    "note": "Rates extracted programmatically from the current manuscript; rounded percentages as printed in the paper.",
+    "metrics": [
+      "benign",
+      "unhinted",
+      "hinted",
+      "verifier-aware"
+    ],
+    "states": [
+      "Before",
+      "AutoSep",
+      "After"
+    ]
+  },
+  "benchmarks": {
+    "tb": {
+      "label": "Terminal-Bench",
+      "tasks": 102,
+      "hardener": "GPT-5.6-Luna",
+      "models": {
+        "GPT-5.6-Sol": {
+          "Before": {
+            "benign": [
+              97.1,
+              90.5
+            ],
+            "unhinted": [
+              68.6,
+              43.5
+            ],
+            "hinted": [
+              99.0,
+              88.2
+            ],
+            "verifier-aware": [
+              98.0,
+              82.4
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              98.0,
+              91.2
+            ],
+            "unhinted": [
+              31.4,
+              19.9
+            ],
+            "hinted": [
+              4.9,
+              3.9
+            ],
+            "verifier-aware": [
+              96.1,
+              89.9
+            ]
+          },
+          "After": {
+            "benign": [
+              99.0,
+              92.5
+            ],
+            "unhinted": [
+              12.7,
+              7.8
+            ],
+            "hinted": [
+              3.9,
+              2.3
+            ],
+            "verifier-aware": [
+              61.8,
+              49.3
+            ]
+          }
+        },
+        "Opus 5": {
+          "Before": {
+            "benign": [
+              96.1,
+              93.1
+            ],
+            "unhinted": [
+              87.3,
+              69.9
+            ],
+            "hinted": [
+              100.0,
+              95.4
+            ],
+            "verifier-aware": [
+              100.0,
+              99.3
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              99.0,
+              94.4
+            ],
+            "unhinted": [
+              47.1,
+              30.1
+            ],
+            "hinted": [
+              27.5,
+              18.3
+            ],
+            "verifier-aware": [
+              99.0,
+              96.1
+            ]
+          },
+          "After": {
+            "benign": [
+              98.0,
+              91.2
+            ],
+            "unhinted": [
+              17.6,
+              12.1
+            ],
+            "hinted": [
+              6.9,
+              5.2
+            ],
+            "verifier-aware": [
+              71.6,
+              63.1
+            ]
+          }
+        },
+        "Gemini 3.1 Pro": {
+          "Before": {
+            "benign": [
+              89.2,
+              80.7
+            ],
+            "unhinted": [
+              37.3,
+              23.2
+            ],
+            "hinted": [
+              46.1,
+              23.2
+            ],
+            "verifier-aware": [
+              95.1,
+              83.3
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              92.2,
+              81.4
+            ],
+            "unhinted": [
+              28.4,
+              19.9
+            ],
+            "hinted": [
+              5.9,
+              3.3
+            ],
+            "verifier-aware": [
+              87.3,
+              78.4
+            ]
+          },
+          "After": {
+            "benign": [
+              87.3,
+              79.1
+            ],
+            "unhinted": [
+              12.7,
+              8.2
+            ],
+            "hinted": [
+              1.0,
+              1.0
+            ],
+            "verifier-aware": [
+              58.8,
+              40.2
+            ]
+          }
+        }
+      }
+    },
+    "kb": {
+      "label": "KernelBench",
+      "tasks": 53,
+      "hardener": "GPT-5.6-Terra",
+      "models": {
+        "GPT-5.6-Sol": {
+          "Before": {
+            "benign": [
+              100.0,
+              95.6
+            ],
+            "unhinted": [
+              100.0,
+              85.5
+            ],
+            "hinted": [
+              98.1,
+              88.7
+            ],
+            "verifier-aware": [
+              100.0,
+              95.6
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              100.0,
+              98.7
+            ],
+            "unhinted": [
+              0.0,
+              0.0
+            ],
+            "hinted": [
+              0.0,
+              0.0
+            ],
+            "verifier-aware": [
+              100.0,
+              96.9
+            ]
+          },
+          "After": {
+            "benign": [
+              100.0,
+              96.9
+            ],
+            "unhinted": [
+              0.0,
+              0.0
+            ],
+            "hinted": [
+              0.0,
+              0.0
+            ],
+            "verifier-aware": [
+              90.6,
+              62.9
+            ]
+          }
+        },
+        "Opus 5": {
+          "Before": {
+            "benign": [
+              100.0,
+              98.7
+            ],
+            "unhinted": [
+              98.1,
+              93.1
+            ],
+            "hinted": [
+              90.6,
+              67.9
+            ],
+            "verifier-aware": [
+              100.0,
+              98.1
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              100.0,
+              100.0
+            ],
+            "unhinted": [
+              7.5,
+              3.1
+            ],
+            "hinted": [
+              11.3,
+              3.8
+            ],
+            "verifier-aware": [
+              98.1,
+              92.5
+            ]
+          },
+          "After": {
+            "benign": [
+              100.0,
+              98.1
+            ],
+            "unhinted": [
+              0.0,
+              0.0
+            ],
+            "hinted": [
+              0.0,
+              0.0
+            ],
+            "verifier-aware": [
+              88.7,
+              81.1
+            ]
+          }
+        },
+        "Gemini 3.1 Pro": {
+          "Before": {
+            "benign": [
+              98.1,
+              92.5
+            ],
+            "unhinted": [
+              88.7,
+              50.9
+            ],
+            "hinted": [
+              62.3,
+              27.7
+            ],
+            "verifier-aware": [
+              90.6,
+              64.2
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              98.1,
+              92.5
+            ],
+            "unhinted": [
+              3.8,
+              1.3
+            ],
+            "hinted": [
+              1.9,
+              0.6
+            ],
+            "verifier-aware": [
+              94.3,
+              74.2
+            ]
+          },
+          "After": {
+            "benign": [
+              98.1,
+              90.6
+            ],
+            "unhinted": [
+              1.9,
+              1.9
+            ],
+            "hinted": [
+              1.9,
+              0.6
+            ],
+            "verifier-aware": [
+              75.5,
+              44.0
+            ]
+          }
+        }
+      }
+    },
+    "seta": {
+      "label": "SETA",
+      "tasks": 155,
+      "hardener": "GPT-5.6-Luna",
+      "models": {
+        "GPT-5.6-Sol": {
+          "Before": {
+            "benign": [
+              96.1,
+              94.2
+            ],
+            "unhinted": [
+              89.0,
+              69.0
+            ],
+            "hinted": [
+              99.4,
+              93.1
+            ],
+            "verifier-aware": [
+              96.1,
+              80.6
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              93.5,
+              91.2
+            ],
+            "unhinted": [
+              63.2,
+              46.9
+            ],
+            "hinted": [
+              4.5,
+              3.0
+            ],
+            "verifier-aware": [
+              92.3,
+              86.5
+            ]
+          },
+          "After": {
+            "benign": [
+              96.1,
+              90.3
+            ],
+            "unhinted": [
+              31.0,
+              20.2
+            ],
+            "hinted": [
+              2.6,
+              1.9
+            ],
+            "verifier-aware": [
+              82.6,
+              66.2
+            ]
+          }
+        },
+        "Opus 5": {
+          "Before": {
+            "benign": [
+              96.8,
+              95.3
+            ],
+            "unhinted": [
+              99.4,
+              90.1
+            ],
+            "hinted": [
+              100.0,
+              98.7
+            ],
+            "verifier-aware": [
+              100.0,
+              98.9
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              98.1,
+              96.3
+            ],
+            "unhinted": [
+              76.8,
+              62.8
+            ],
+            "hinted": [
+              54.2,
+              39.1
+            ],
+            "verifier-aware": [
+              98.1,
+              95.1
+            ]
+          },
+          "After": {
+            "benign": [
+              94.8,
+              90.3
+            ],
+            "unhinted": [
+              50.3,
+              35.1
+            ],
+            "hinted": [
+              23.9,
+              15.9
+            ],
+            "verifier-aware": [
+              86.5,
+              74.2
+            ]
+          }
+        },
+        "Gemini 3.1 Pro": {
+          "Before": {
+            "benign": [
+              96.1,
+              92.5
+            ],
+            "unhinted": [
+              91.0,
+              71.2
+            ],
+            "hinted": [
+              73.5,
+              37.8
+            ],
+            "verifier-aware": [
+              99.4,
+              92.9
+            ]
+          },
+          "AutoSep": {
+            "benign": [
+              96.8,
+              92.5
+            ],
+            "unhinted": [
+              80.0,
+              63.2
+            ],
+            "hinted": [
+              15.5,
+              7.3
+            ],
+            "verifier-aware": [
+              91.0,
+              86.7
+            ]
+          },
+          "After": {
+            "benign": [
+              92.3,
+              84.5
+            ],
+            "unhinted": [
+              41.9,
+              27.5
+            ],
+            "hinted": [
+              7.7,
+              3.2
+            ],
+            "verifier-aware": [
+              86.5,
+              71.8
+            ]
+          }
+        }
+      }
+    }
+  },
+  "scaling": {
+    "checkpoints": [
+      "Before",
+      "0",
+      "2",
+      "5",
+      "10",
+      "15"
+    ],
+    "iterations": [
+      -3,
+      0,
+      2,
+      5,
+      10,
+      15
+    ],
+    "attack": {
+      "Full method": [
+        69.9,
+        30.1,
+        18.3,
+        13.1,
+        12.7,
+        12.1
+      ],
+      "Without verifier access": [
+        69.9,
+        30.1,
+        26.8,
+        24.2,
+        24.2,
+        25.8
+      ],
+      "Fixed output specification": [
+        69.9,
+        30.1,
+        29.1,
+        27.5,
+        24.8,
+        24.2
+      ],
+      "Without separation": [
+        69.9,
+        69.9,
+        60.8,
+        48.7,
+        38.9,
+        33.3
+      ]
+    },
+    "benign": {
+      "Full method": [
+        93.1,
+        94.4,
+        92.8,
+        91.8,
+        91.5,
+        91.2
+      ],
+      "Without corpus replay": [
+        93.1,
+        94.4,
+        88.6,
+        87.9,
+        86.9,
+        87.6
+      ],
+      "Without validation": [
+        93.1,
+        94.4,
+        74.8,
+        70.9,
+        70.9,
+        71.2
+      ]
+    }
+  }
+}
